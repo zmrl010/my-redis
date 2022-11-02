@@ -89,7 +89,7 @@ impl Connection {
             Frame::Null => {
                 self.stream.write_all(b"$-1\r\n").await?;
             }
-            Frame::Array(_) => unimplemented!(),
+            Frame::Array(_) => unreachable!(),
         }
 
         Ok(())
